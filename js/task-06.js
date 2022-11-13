@@ -2,7 +2,7 @@ const refs = {
   inputEl:document.querySelector('#validation-input'), }
  refs.inputEl.addEventListener('blur', onInputBlur);
 function onInputBlur(event) {
-  if (refs.inputEl.value.length === Number(refs.inputEl.dataset.length)) {
+  if (refs.inputEl.value.trim().length === Number(refs.inputEl.dataset.length)) {
     refs.inputEl.classList.add('valid')
     refs.inputEl.classList.remove('invalid')
   } else {
@@ -12,7 +12,10 @@ function onInputBlur(event) {
 
 
 
-// const input = document.querySelector('#validation-input');
+
+
+
+ // const input = document.querySelector('#validation-input');
 
 // const onBlur = () => {
 //   if (input.value.length === Number(input.dataset.length)) {
