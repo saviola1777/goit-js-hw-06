@@ -7,8 +7,12 @@ const ingredients = [
   'Condiments',
 ];
 const elementUl = document.querySelector('#ingredients');
-const addEl = ingredients.map(ingredient => `<li class='item'> ${ingredient}</li>`).join(""); 
-elementUl.insertAdjacentHTML('beforeend', addEl);
+const addEl = ingredients.map(ingredient => {
+  const liElement = document.createElement('li');
+  liElement.textContent = ingredient
+  liElement.classList.add('item');
+  elementUl.append(liElement)
+})
 console.log(elementUl)
 
 
